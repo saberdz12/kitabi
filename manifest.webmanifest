@@ -1,10 +1,9 @@
 {
-  "name": "كتابي - مكتبتك الرقمية",
-  "short_name": "كتابي",
+  "name": "KITABI Digital Library",
+  "short_name": "KITABI",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f7f5ef",
-  "theme_color": "#14263d",
-  "lang": "ar",
-  "dir": "rtl"
+  "theme_color": "#142238",
+  "description": "A multilingual digital library"
 }
