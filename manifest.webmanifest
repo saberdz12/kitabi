@@ -1,9 +1,95 @@
 {
-  "name": "KITABI Digital Library",
-  "short_name": "KITABI",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#f7f5ef",
-  "theme_color": "#142238",
-  "description": "A multilingual digital library"
+"id": "./",
+"name": "مكتبة هشام العالمية - المنصة الرقمية المعرفية",
+"short_name": "مكتبة هشام",
+"description": "مكتبة هشام العالمية - وجهتك الرقمية الأولى لاستكشاف وقراءة أعمق المقالات الفلسفية، القصص المشوقة، والقصائد العاطفية بأسلوب قراءة مريح وعصري.",
+"lang": "ar",
+"dir": "auto",
+"start_url": "./index.html",
+"scope": "./",
+"display": "standalone",
+"display_override": ["fullscreen", "minimal-ui"],
+"orientation": "portrait-primary",
+"background_color": "#f8f6f1",
+"theme_color": "#142238",
+"categories": [
+"education",
+"books",
+"reading",
+"lifestyle"
+],
+"icons": [
+{
+"src": "./icons/icon-72x72.png",
+"sizes": "72x72",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "./icons/icon-96x96.png",
+"sizes": "96x96",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "./icons/icon-128x128.png",
+"sizes": "128x128",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "./icons/icon-144x144.png",
+"sizes": "144x144",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "./icons/icon-152x152.png",
+"sizes": "152x152",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "./icons/icon-192x192.png",
+"sizes": "192x192",
+"type": "image/png",
+"purpose": "any maskable"
+},
+{
+"src": "./icons/icon-384x384.png",
+"sizes": "384x384",
+"type": "image/png",
+"purpose": "any"
+},
+{
+"src": "./icons/icon-512x512.png",
+"sizes": "512x512",
+"type": "image/png",
+"purpose": "any maskable"
 }
+],
+"shortcuts": [
+{
+"name": "المقالات الفلسفية",
+"short_name": "الفلسفة",
+"description": "الانتقال المباشر إلى قسم المقالات الفلسفية العميقة",
+"url": "./index.html#philosophy",
+"icons": [{ "src": "./icons/shortcut-philosophy.png", "sizes": "96x96", "type": "image/png" }]
+},
+{
+"name": "القصص القصيرة",
+"short_name": "القصص",
+"description": "الانتقال المباشر إلى قسم القصص القصيرة المشوقة",
+"url": "./index.html#stories",
+"icons": [{ "src": "./icons/shortcut-stories.png", "sizes": "96x96", "type": "image/png" }]
+},
+{
+"name": "القصائد الشعرية",
+"short_name": "الشعر",
+"description": "الانتقال المباشر إلى قسم القصائد الشعرية العاطفية",
+"url": "./index.html#poetry",
+"icons": [{ "src": "./icons/shortcut-poetry.png", "sizes": "96x96", "type": "image/png" }]
+}
+],
+"prefer_related_applications": false
+} 
