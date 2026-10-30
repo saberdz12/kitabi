@@ -1,31 +1,254 @@
+"use strict"; 
+
+/* ==========================================================================
+KITABI - TRANSLATIONS DATA
+========================================================================== */ 
+
+const translations = {
+ar: {
+navLibrary: "المكتبة",
+navFeatures: "المميزات",
+favorites: "المفضلة",
+eyebrow: "مساحة واحدة لكل ما تحب قراءته",
+heroTitle: 'افتح كتاباً،
+وافتح عالماً جديداً.',
+heroDesc: "اكتشف عناوين جديدة، وابحث حسب المجال، واجمع الكتب التي تهمك في مكتبتك الخاصة.",
+explore: "استكشف المكتبة",
+heroFoot: "المعرفة تبدأ بصفحة",
+statOne: "مكتبة تجريبية قابلة للتوسّع",
+statTwo: "لغات للواجهة",
+statThree: "مساحة لاكتشاف المعرفة",
+curated: "اختيارات KITABI",
+libraryTitle: "اكتشف المكتبة",
+librarySubtitle: "ابحث في العناوين التجريبية أو صفِّ النتائج حسب التصنيف.",
+searchPlaceholder: "ابحث عن عنوان أو مؤلف...",
+empty: "لا توجد نتائج مطابقة. جرّب بحثاً آخر.",
+featureSearch: "بحث سهل",
+featureSearchDesc: "اعثر على العناوين حسب الاسم أو المؤلف.",
+featureFav: "قائمتك المفضلة",
+featureFavDesc: "احفظ اختياراتك على هذا الجهاز.",
+featureGrow: "قابلة للتوسّع",
+featureGrowDesc: "الخطوة التالية: ربط قاعدة بيانات وإضافة كتب مرخّصة.",
+footerText: "اقرأ، اكتشف، تعلّم.",
+all: "الكل",
+categoryScience: "العلوم",
+categoryLiterature: "الأدب",
+categoryHistory: "التاريخ",
+categoryTechnology: "التكنولوجيا",
+categoryDevelopment: "التطوير",
+author: "المؤلف",
+details: "التفاصيل",
+addFavorite: "أضف للمفضلة",
+removeFavorite: "إزالة من المفضلة",
+results: "نتيجة",
+demoNotice: "هذا عنوان تجريبي، وليس كتاباً كاملاً متاحاً للقراءة أو التحميل.",
+noFavorites: "لم تضف كتباً إلى المفضلة بعد."
+}, 
+
+en: {
+navLibrary: "Library",
+navFeatures: "Features",
+favorites: "Favorites",
+eyebrow: "One place for everything you love to read",
+heroTitle: 'Open a book,
+open a new world.',
+heroDesc: "Discover titles, explore subjects, and collect the books that interest you.",
+explore: "Explore library",
+heroFoot: "Knowledge begins with a page",
+statOne: "Expandable demo library",
+statTwo: "Interface languages",
+statThree: "A space to discover knowledge",
+curated: "KITABI PICKS",
+libraryTitle: "Explore the library",
+librarySubtitle: "Search demo titles or filter by category.",
+searchPlaceholder: "Search by title or author...",
+empty: "No matching results. Try another search.",
+featureSearch: "Easy search",
+featureSearchDesc: "Find titles by name or author.",
+featureFav: "Your favorites",
+featureFavDesc: "Save your selections on this device.",
+featureGrow: "Expandable",
+featureGrowDesc: "Next step: connect a database and add licensed books.",
+footerText: "Read, discover, learn.",
+all: "All",
+categoryScience: "Science",
+categoryLiterature: "Literature",
+categoryHistory: "History",
+categoryTechnology: "Technology",
+categoryDevelopment: "Personal growth",
+author: "Author",
+details: "Details",
+addFavorite: "Add to favorites",
+removeFavorite: "Remove from favorites",
+results: "results",
+demoNotice: "This is a demo title, not a complete book available to read or download.",
+noFavorites: "You have not added any favorites yet."
+}, 
+
+fr: {
+navLibrary: "Bibliothèque",
+navFeatures: "Fonctionnalités",
+favorites: "Favoris",
+eyebrow: "Un seul espace pour vos lectures",
+heroTitle: 'Ouvrez un livre,
+ouvrez un nouveau monde.',
+heroDesc: "Découvrez des titres, explorez des sujets et rassemblez vos livres préférés.",
+explore: "Explorer la bibliothèque",
+heroFoot: "La connaissance commence par une page",
+statOne: "Bibliothèque de démonstration évolutive",
+statTwo: "Langues de l’interface",
+statThree: "Un espace de découverte",
+curated: "SÉLECTION KITABI",
+libraryTitle: "Explorer la bibliothèque",
+librarySubtitle: "Recherchez des titres de démonstration ou filtrez par catégorie.",
+searchPlaceholder: "Rechercher un titre ou un auteur...",
+empty: "Aucun résultat. Essayez une autre recherche.",
+featureSearch: "Recherche facile",
+featureSearchDesc: "Trouvez des titres par nom ou auteur.",
+featureFav: "Vos favoris",
+featureFavDesc: "Enregistrez vos choix sur cet appareil.",
+featureGrow: "Évolutive",
+featureGrowDesc: "Prochaine étape : connecter une base de données et ajouter des livres sous licence.",
+footerText: "Lire, découvrir, apprendre.",
+all: "Tout",
+categoryScience: "Sciences",
+categoryLiterature: "Littérature",
+categoryHistory: "Histoire",
+categoryTechnology: "Technologie",
+categoryDevelopment: "Développement personnel",
+author: "Auteur",
+details: "Détails",
+addFavorite: "Ajouter aux favoris",
+removeFavorite: "Retirer des favoris",
+results: "résultats",
+demoNotice: "Ceci est un titre de démonstration, pas un livre complet disponible à la lecture ou au téléchargement.",
+noFavorites: "Vous n’avez pas encore ajouté de favoris."
+}
+}; 
+
+/* ==========================================================================
+KITABI - DEMO BOOKS DATA
+========================================================================== */ 
+
 const books = [
- {id:1,title:{ar:"مبادئ البرمجة",en:"Programming Basics",fr:"Les bases de la programmation"},author:{ar:"فريق KITABI",en:"KITABI Team",fr:"Équipe KITABI"},cat:"tech",symbol:"⌘",cover:"c1",desc:{ar:"مدخل تمهيدي إلى التفكير الحاسوبي ومفاهيم البرمجة. هذا وصف تجريبي وليس كتاباً كاملاً.",en:"An introductory overview of computational thinking and programming concepts. Sample description, not a full book.",fr:"Une introduction à la pensée informatique et aux notions de programmation. Description de démonstration, pas un livre complet."}},
- {id:2,title:{ar:"رحلة في التاريخ",en:"A Journey Through History",fr:"Voyage à travers l’histoire"},author:{ar:"قسم التاريخ",en:"History Collection",fr:"Collection Histoire"},cat:"history",symbol:"⌛",cover:"c2",desc:{ar:"محطات تاريخية تساعد على استكشاف الحضارات والأحداث. محتوى تجريبي.",en:"Explore civilizations and historical turning points. Sample content.",fr:"Explorez les civilisations et les grands événements historiques. Contenu de démonstration."}},
- {id:3,title:{ar:"فن التفكير",en:"The Art of Thinking",fr:"L’art de penser"},author:{ar:"قسم المعرفة",en:"Knowledge Collection",fr:"Collection Savoir"},cat:"self",symbol:"✧",cover:"c3",desc:{ar:"أفكار حول التفكير النقدي وتنظيم المعرفة. محتوى تجريبي.",en:"Ideas about critical thinking and organizing knowledge. Sample content.",fr:"Des idées sur l’esprit critique et l’organisation des connaissances. Contenu de démonstration."}},
- {id:4,title:{ar:"حدائق الأدب",en:"Gardens of Literature",fr:"Jardins de littérature"},author:{ar:"قسم الأدب",en:"Literature Collection",fr:"Collection Littérature"},cat:"literature",symbol:"❧",cover:"c4",desc:{ar:"نافذة تعريفية إلى الأدب والقراءة وتحليل النصوص. محتوى تجريبي.",en:"An introduction to literature, reading, and text analysis. Sample content.",fr:"Une introduction à la littérature, à la lecture et à l’analyse des textes. Contenu de démonstration."}},
- {id:5,title:{ar:"أساسيات العلوم",en:"Science Essentials",fr:"Les essentiels des sciences"},author:{ar:"قسم العلوم",en:"Science Collection",fr:"Collection Sciences"},cat:"science",symbol:"⚗",cover:"c1",desc:{ar:"مفاهيم علمية أساسية بأسلوب مبسط. محتوى تجريبي.",en:"Essential scientific concepts explained simply. Sample content.",fr:"Des notions scientifiques essentielles expliquées simplement. Contenu de démonstration."}},
- {id:6,title:{ar:"ثقافات العالم",en:"World Cultures",fr:"Cultures du monde"},author:{ar:"قسم الثقافة",en:"Culture Collection",fr:"Collection Culture"},cat:"culture",symbol:"◎",cover:"c2",desc:{ar:"تعرف على تنوع الثقافات والتجارب الإنسانية. محتوى تجريبي.",en:"Discover cultural diversity and human experiences. Sample content.",fr:"Découvrez la diversité culturelle et les expériences humaines. Contenu de démonstration."}},
- {id:7,title:{ar:"عالم الرواية",en:"The World of Novels",fr:"L’univers du roman"},author:{ar:"قسم الأدب",en:"Literature Collection",fr:"Collection Littérature"},cat:"literature",symbol:"❦",cover:"c4",desc:{ar:"تعرف على أشكال الرواية وعناصرها الفنية. محتوى تجريبي.",en:"Discover novel forms and their literary elements. Sample content.",fr:"Découvrez les formes du roman et ses éléments littéraires. Contenu de démonstration."}},
- {id:8,title:{ar:"التقنية الحديثة",en:"Modern Technology",fr:"Technologies modernes"},author:{ar:"فريق KITABI",en:"KITABI Team",fr:"Équipe KITABI"},cat:"tech",symbol:"⌘",cover:"c3",desc:{ar:"نظرة عامة على التقنيات الرقمية الحديثة. محتوى تجريبي.",en:"An overview of modern digital technologies. Sample content.",fr:"Un aperçu des technologies numériques modernes. Contenu de démonstration."}}
+{
+id: 1,
+symbol: "✦",
+category: "science",
+title: {
+ar: "رحلة في عالم العلوم",
+en: "A Journey Through Science",
+fr: "Voyage dans le monde des sciences"
+},
+author: {
+ar: "فريق KITABI",
+en: "KITABI Team",
+fr: "Équipe KITABI"
+},
+description: {
+ar: "عنوان تجريبي للتعرف على قسم العلوم واكتشاف موضوعاته.",
+en: "A demo entry introducing the science category and its topics.",
+fr: "Une entrée de démonstration pour découvrir la catégorie des sciences."
+}
+},
+{
+id: 2,
+symbol: "❖",
+category: "literature",
+title: {
+ar: "حدائق الأدب",
+en: "Gardens of Literature",
+fr: "Jardins de la littérature"
+},
+author: {
+ar: "فريق KITABI",
+en: "KITABI Team",
+fr: "Équipe KITABI"
+},
+description: {
+ar: "عنوان تجريبي لقسم الأدب والقراءة.",
+en: "A demo entry for literature and reading.",
+fr: "Une entrée de démonstration pour la littérature et la lecture."
+}
+},
+{
+id: 3,
+symbol: "⌘",
+category: "technology",
+title: {
+ar: "مدخل إلى التكنولوجيا",
+en: "Introduction to Technology",
+fr: "Introduction à la technologie"
+},
+author: {
+ar: "فريق KITABI",
+en: "KITABI Team",
+fr: "Équipe KITABI"
+},
+description: {
+ar: "عنوان تجريبي للتعرف على عالم التكنولوجيا.",
+en: "A demo entry exploring the world of technology.",
+fr: "Une entrée de démonstration pour explorer la technologie."
+}
+},
+{
+id: 4,
+symbol: "◈",
+category: "history",
+title: {
+ar: "صفحات من التاريخ",
+en: "Pages from History",
+fr: "Pages d’histoire"
+},
+author: {
+ar: "فريق KITABI",
+en: "KITABI Team",
+fr: "Équipe KITABI"
+},
+description: {
+ar: "عنوان تجريبي للتعرف على قسم التاريخ.",
+en: "A demo entry introducing the history category.",
+fr: "Une entrée de démonstration pour découvrir l’histoire."
+}
+},
+{
+id: 5,
+symbol: "✧",
+category: "development",
+title: {
+ar: "خطوات نحو التطور",
+en: "Steps Towards Growth",
+fr: "Les étapes du développement"
+},
+author: {
+ar: "فريق KITABI",
+en: "KITABI Team",
+fr: "Équipe KITABI"
+},
+description: {
+ar: "عنوان تجريبي حول التعلم وتطوير المهارات.",
+en: "A demo entry about learning and developing skills.",
+fr: "Une entrée de démonstration sur l’apprentissage et les compétences."
+}
+},
+{
+id: 6,
+symbol: "✺",
+category: "science",
+title: {
+ar: "أسرار الطبيعة",
+en: "Secrets of Nature",
+fr: "Les secrets de la nature"
+},
+author: {
+ar: "فريق KITABI",
+en: "KITABI Team",
+fr: "Équipe KITABI"
+},
+description: {
+ar: "عنوان تجريبي لاستكشاف موضوعات الطبيعة.",
+en: "A demo entry exploring topics related to nature.",
+fr: "Une entrée de démonstration sur la nature."
+}
+}
 ];
-const translations={
- ar:{dir:"rtl",navLibrary:"المكتبة",navFeatures:"المميزات",favorites:"المفضلة",eyebrow:"مساحة واحدة لكل ما تحب قراءته",heroTitle:'افتح كتاباً،<br><span>وافتح عالماً جديداً.</span>',heroDesc:"اكتشف عناوين جديدة، وابحث حسب المجال، واجمع الكتب التي تهمك في مكتبتك الخاصة.",explore:"استكشف المكتبة",heroFoot:"المعرفة تبدأ بصفحة",statOne:"مكتبة تجريبية قابلة للتوسّع",statTwo:"لغات للواجهة",statThree:"مساحة لاكتشاف المعرفة",curated:"اختيارات KITABI",libraryTitle:"اكتشف المكتبة",librarySubtitle:"ابحث في العناوين التجريبية أو صفِّ النتائج حسب التصنيف.",searchPlaceholder:"ابحث عن عنوان أو مؤلف...",all:"الكل",tech:"التكنولوجيا",history:"التاريخ",self:"تطوير الذات",literature:"الأدب",science:"العلوم",culture:"الثقافة",empty:"لا توجد نتائج مطابقة. جرّب بحثاً آخر.",read:"اقرأ التفاصيل",save:"أضف للمفضلة",remove:"إزالة من المفضلة",featureSearch:"بحث سهل",featureSearchDesc:"اعثر على العناوين حسب الاسم أو المؤلف.",featureFav:"قائمتك المفضلة",featureFavDesc:"احفظ اختياراتك على هذا الجهاز.",featureGrow:"قابلة للتوسّع",featureGrowDesc:"الخطوة التالية: ربط قاعدة بيانات وإضافة كتب مرخّصة.",footerText:"اقرأ، اكتشف، تعلّم.",sampleNotice:"هذه بطاقة تعريف تجريبية. لا يتوفر ملف كتاب فعلي للقراءة أو التحميل بعد. ستُضاف الكتب الكاملة بعد توفير ملفات مرخّصة.",close:"إغلاق",results:"نتيجة",favoriteHeading:"كتبك المفضلة"},
- en:{dir:"ltr",navLibrary:"Library",navFeatures:"Features",favorites:"Favorites",eyebrow:"One place for everything you love to read",heroTitle:'Open a book,<br><span>open a new world.</span>',heroDesc:"Discover new titles, explore by subject, and collect the books that matter to you.",explore:"Explore library",heroFoot:"Knowledge begins with a page",statOne:"Expandable starter library",statTwo:"Interface languages",statThree:"Room to discover",curated:"CURATED BY KITABI",libraryTitle:"Explore the library",librarySubtitle:"Search the sample titles or filter by category.",searchPlaceholder:"Search by title or author...",all:"All",tech:"Technology",history:"History",self:"Personal growth",literature:"Literature",science:"Science",culture:"Culture",empty:"No matching results. Try another search.",read:"View details",save:"Add to favorites",remove:"Remove favorite",featureSearch:"Easy search",featureSearchDesc:"Find titles by name or author.",featureFav:"Your favorites",featureFavDesc:"Save your picks on this device.",featureGrow:"Built to grow",featureGrowDesc:"Next: connect a database and add licensed books.",footerText:"Read. Discover. Learn.",sampleNotice:"This is a sample book card. No actual book file is available to read or download yet. Complete books will be added when licensed files are provided.",close:"Close",results:"results",favoriteHeading:"Your favorites"},
- fr:{dir:"ltr",navLibrary:"Bibliothèque",navFeatures:"Fonctionnalités",favorites:"Favoris",eyebrow:"Un seul espace pour vos lectures",heroTitle:'Ouvrez un livre,<br><span>ouvrez un nouveau monde.</span>',heroDesc:"Découvrez de nouveaux titres, explorez par thème et rassemblez vos lectures préférées.",explore:"Explorer la bibliothèque",heroFoot:"La connaissance commence par une page",statOne:"Bibliothèque évolutive",statTwo:"Langues d’interface",statThree:"Un espace de découverte",curated:"SÉLECTION KITABI",libraryTitle:"Explorer la bibliothèque",librarySubtitle:"Recherchez parmi les titres de démonstration ou filtrez par catégorie.",searchPlaceholder:"Rechercher un titre ou un auteur...",all:"Tout",tech:"Technologie",history:"Histoire",self:"Développement personnel",literature:"Littérature",science:"Sciences",culture:"Culture",empty:"Aucun résultat. Essayez une autre recherche.",read:"Voir les détails",save:"Ajouter aux favoris",remove:"Retirer des favoris",featureSearch:"Recherche facile",featureSearchDesc:"Trouvez des titres par nom ou auteur.",featureFav:"Vos favoris",featureFavDesc:"Enregistrez vos choix sur cet appareil.",featureGrow:"Évolutive",featureGrowDesc:"Prochaine étape : connecter une base de données et ajouter des livres sous licence.",footerText:"Lire. Découvrir. Apprendre.",sampleNotice:"Ceci est une fiche de démonstration. Aucun fichier de livre n’est disponible pour la lecture ou le téléchargement. Les livres complets seront ajoutés avec des fichiers autorisés.",close:"Fermer",results:"résultats",favoriteHeading:"Vos favoris"}
-};
-let lang="ar",activeCategory="all",showFavorites=false;
-const $=s=>document.querySelector(s),grid=$("#bookGrid"),categoryBar=$("#categories"),searchInput=$("#searchInput"),dialog=$("#bookDialog");
-const favorites=new Set(JSON.parse(localStorage.getItem("kitabi_favorites")||"[]"));
-function t(key){return translations[lang][key]||key}
-function setLanguage(next){lang=next;document.documentElement.lang=lang;document.documentElement.dir=translations[lang].dir;document.body.dir=translations[lang].dir;document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(translations[lang][k])el.innerHTML=translations[lang][k]});document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>el.placeholder=t(el.dataset.i18nPlaceholder));renderCategories();renderBooks()}
-function renderCategories(){categoryBar.innerHTML="";["all","tech","history","self","literature","science","culture"].forEach(cat=>{const b=document.createElement("button");b.className="category"+(activeCategory===cat?" active":"");b.textContent=t(cat);b.onclick=()=>{activeCategory=cat;renderCategories();renderBooks()};categoryBar.appendChild(b)})}
-function renderBooks(){const term=searchInput.value.trim().toLocaleLowerCase();const list=books.filter(b=>{const title=b.title[lang],author=b.author[lang];return(!showFavorites||favorites.has(b.id))&&(activeCategory==="all"||b.cat===activeCategory)&&(!term||(title+" "+author).toLocaleLowerCase().includes(term))});grid.innerHTML="";list.forEach(b=>{const card=document.createElement("article");card.className="book-card";const saved=favorites.has(b.id);card.innerHTML=`<div class="cover ${b.cover}"><span>${b.symbol}</span><small>KITABI · ${t(b.cat).toUpperCase()}</small></div><h3>${b.title[lang]}</h3><p class="book-author">${b.author[lang]}</p><div class="card-actions"><button class="read-btn">${t("read")}</button><button class="fav-btn ${saved?"saved":""}">${saved?"♥":"♡"} ${saved?t("remove"):t("save")}</button></div>`;card.querySelector(".read-btn").onclick=()=>openBook(b);card.querySelector(".fav-btn").onclick=()=>toggleFavorite(b.id);grid.appendChild(card)});$("#emptyState").classList.toggle("hidden",list.length!==0);$("#resultCount").textContent=`${list.length} ${t("results")}`}
-function toggleFavorite(id){if(favorites.has(id))favorites.delete(id);else favorites.add(id);localStorage.setItem("kitabi_favorites",JSON.stringify([...favorites]));renderBooks()}
-function openBook(b){$("#dialogContent").innerHTML=`<p class="dialog-kicker">KITABI · ${t(b.cat)}</p><h2 class="dialog-title">${b.title[lang]}</h2><p class="book-author">${b.author[lang]}</p><p class="dialog-text">${b.desc[lang]}</p><p class="notice">${t("sampleNotice")}</p>`;dialog.showModal()}
-$("#languageSelect").addEventListener("change",e=>setLanguage(e.target.value));
-$("#searchInput").addEventListener("input",renderBooks);
-$("#favoritesToggle").addEventListener("click",()=>{showFavorites=!showFavorites;$("#favoritesToggle").textContent=showFavorites?t("libraryTitle"):t("favorites");$("#library").scrollIntoView({behavior:"smooth"});renderBooks()});
-$("#closeDialog").addEventListener("click",()=>dialog.close());
-dialog.addEventListener("click",e=>{if(e.target===dialog)dialog.close()});
-$("#year").textContent=new Date().getFullYear();setLanguage("ar");
-if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}))}
