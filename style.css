@@ -497,3 +497,123 @@ box-shadow: 0 16px 35px rgba(20, 34, 56, 0.13);
 
 .book-cover {
 height: 190px; 
+
+/* KITABI - Book library enhancements */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 16px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 15px;
+  border: 1px solid rgba(201, 164, 92, .28);
+  border-radius: 14px;
+  background: #fff;
+  min-width: 0;
+}
+
+.book-cover {
+  min-height: 105px;
+  display: grid;
+  place-items: center;
+  font-size: 42px;
+  border-radius: 10px;
+  background: #101d35;
+  color: #d6b36b;
+}
+
+.book-card h3 {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  color: #14213b;
+}
+
+.book-author,
+.book-meta {
+  margin: 0;
+  font-size: 12px;
+  color: #777;
+}
+
+.book-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+}
+
+.read-btn,
+.favorite-btn,
+.category-btn {
+  cursor: pointer;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+
+.read-btn {
+  display: inline-block;
+  background: #14213b;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  text-align: center;
+  flex: 1;
+}
+
+.favorite-btn {
+  background: #f3ead8;
+  color: #9b742e;
+  font-size: 19px;
+}
+
+.category-btn {
+  margin: 4px;
+  background: #f0f1f4;
+  color: #14213b;
+}
+
+.category-btn.active {
+  background: #c9a45c;
+  color: #14213b;
+}
+
+#emptyState[hidden] {
+  display: none;
+}
+
+#bookDialog {
+  max-width: 460px;
+  width: calc(100% - 30px);
+  border: 1px solid #c9a45c;
+  border-radius: 15px;
+  padding: 22px;
+}
+
+#bookDialog::backdrop {
+  background: rgba(8, 15, 30, .7);
+}
+
+#dialogContent {
+  line-height: 1.9;
+}
+
+@media (max-width: 480px) {
+  .book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .book-card {
+    padding: 10px;
+  }
+
+  .book-cover {
+    min-height: 85px;
+  }
+}
