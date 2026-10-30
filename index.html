@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14263d">
+  <meta name="description" content="كتابي - مكتبتك الرقمية">
+  <title>كتابي | مكتبتك الرقمية</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">▤</span> كِتَابِي</a>
+    <span class="tagline">مكتبتك الرقمية</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">اكتشف عالم المعرفة</p>
+      <h1>كتابك القادم<br><span>ينتظرك هنا</span></h1>
+      <p>اكتشف الكتب، تعرّف على مؤلفين جدد، واجمع قراءاتك في مكان واحد.</p>
+      <a href="#library" class="hero-button">استكشف المكتبة</a>
+    </section>
+
+    <section class="toolbar" id="library">
+      <div>
+        <h2>المكتبة</h2>
+        <p class="muted">مجموعة مختارة للانطلاق</p>
+      </div>
+      <label class="search-wrap">
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="ابحث عن كتاب أو مؤلف..." aria-label="ابحث عن كتاب أو مؤلف">
+      </label>
+    </section>
+
+    <nav id="categories" class="categories" aria-label="تصنيفات الكتب"></nav>
+    <section id="bookGrid" class="book-grid" aria-live="polite"></section>
+    <p id="emptyState" class="empty hidden">لا توجد نتائج. جرّب كلمة بحث أخرى.</p>
+  </main>
+
+  <footer>
+    <span>كتابي © <span id="year"></span></span>
+    <span>اقرأ، اكتشف، تعلّم</span>
+  </footer>
+
+  <dialog id="bookDialog" class="book-dialog">
+    <button class="close-button" id="closeDialog" aria-label="إغلاق">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
