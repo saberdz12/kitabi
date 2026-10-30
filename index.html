@@ -5,63 +5,218 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#142238">
   <meta name="description" content="KITABI — مكتبتك الرقمية للقراءة واكتشاف المعرفة">
+
   <title>KITABI | مكتبتك الرقمية</title>
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+
 <header class="topbar">
-  <a class="brand" href="#" aria-label="KITABI home"><span class="brand-mark">K</span><span>KITABI</span></a>
-  <nav class="main-nav"><a href="#library" data-i18n="navLibrary">المكتبة</a><a href="#features" data-i18n="navFeatures">المميزات</a></nav>
+  <a class="brand" href="#" aria-label="KITABI home">
+    <span class="brand-mark">K</span>
+    <span>KITABI</span>
+  </a>
+
+  <nav class="main-nav">
+    <a href="#library" data-i18n="navLibrary">المكتبة</a>
+    <a href="#features" data-i18n="navFeatures">المميزات</a>
+  </nav>
+
   <div class="top-actions">
     <select id="languageSelect" aria-label="Choose language">
-      <option value="ar">العربية</option><option value="en">English</option><option value="fr">Français</option>
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
     </select>
-    <button id="favoritesToggle" class="outline-btn" type="button" data-i18n="favorites">المفضلة</button>
+
+    <button
+      id="favoritesToggle"
+      class="outline-btn"
+      type="button"
+      data-i18n="favorites">
+      المفضلة
+    </button>
   </div>
 </header>
 
 <main class="container">
+
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow" data-i18n="eyebrow">مساحة واحدة لكل ما تحب قراءته</p>
-      <h1 data-i18n="heroTitle">افتح كتاباً،<br><span>وافتح عالماً جديداً.</span></h1>
-      <p class="hero-desc" data-i18n="heroDesc">اكتشف عناوين جديدة، وابحث حسب المجال، واجمع الكتب التي تهمك في مكتبتك الخاصة.</p>
-      <a class="gold-btn" href="#library" data-i18n="explore">استكشف المكتبة <span aria-hidden="true">←</span></a>
+      <p class="eyebrow" data-i18n="eyebrow">
+        مساحة واحدة لكل ما تحب قراءته
+      </p>
+
+      <h1 data-i18n="heroTitle">
+        افتح كتاباً،<br>
+        <span>وافتح عالماً جديداً.</span>
+      </h1>
+
+      <p class="hero-desc" data-i18n="heroDesc">
+        اكتشف عناوين جديدة، وابحث حسب المجال،
+        واجمع الكتب التي تهمك في مكتبتك الخاصة.
+      </p>
+
+      <a class="gold-btn" href="#library" data-i18n="explore">
+        استكشف المكتبة
+        <span aria-hidden="true">←</span>
+      </a>
     </div>
-    <div class="hero-art" aria-hidden="true"><div class="book-stack"><i></i><i></i><i></i><b>知</b></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div></div>
-    <div class="hero-foot"><span>01 / 03</span><span data-i18n="heroFoot">المعرفة تبدأ بصفحة</span></div>
+
+    <div class="hero-art" aria-hidden="true">
+      <div class="book-stack">
+        <i></i>
+        <i></i>
+        <i></i>
+        <b>知</b>
+      </div>
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+    </div>
+
+    <div class="hero-foot">
+      <span>01 / 03</span>
+      <span data-i18n="heroFoot">المعرفة تبدأ بصفحة</span>
+    </div>
   </section>
 
   <section class="stats" aria-label="Library highlights">
-    <div><strong>01</strong><span data-i18n="statOne">مكتبة تجريبية قابلة للتوسّع</span></div>
-    <div><strong>03</strong><span data-i18n="statTwo">لغات للواجهة</span></div>
-    <div><strong>∞</strong><span data-i18n="statThree">مساحة لاكتشاف المعرفة</span></div>
+    <div>
+      <strong>01</strong>
+      <span data-i18n="statOne">مكتبة تجريبية قابلة للتوسّع</span>
+    </div>
+
+    <div>
+      <strong>03</strong>
+      <span data-i18n="statTwo">لغات للواجهة</span>
+    </div>
+
+    <div>
+      <strong>∞</strong>
+      <span data-i18n="statThree">مساحة لاكتشاف المعرفة</span>
+    </div>
   </section>
 
   <section id="library" class="library-section">
+
     <div class="section-heading">
-      <div><p class="eyebrow dark" data-i18n="curated">اختيارات KITABI</p><h2 data-i18n="libraryTitle">اكتشف المكتبة</h2><p class="muted" data-i18n="librarySubtitle">ابحث في العناوين التجريبية أو صفِّ النتائج حسب التصنيف.</p></div>
-      <label class="search-box"><span>⌕</span><input id="searchInput" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="ابحث عن عنوان أو مؤلف..."></label>
+      <div>
+        <p class="eyebrow dark" data-i18n="curated">
+          اختيارات KITABI
+        </p>
+
+        <h2 data-i18n="libraryTitle">
+          اكتشف المكتبة
+        </h2>
+
+        <p class="muted" data-i18n="librarySubtitle">
+          ابحث في العناوين التجريبية أو صفِّ النتائج حسب التصنيف.
+        </p>
+      </div>
+
+      <label class="search-box" for="searchInput">
+        <span aria-hidden="true">⌕</span>
+
+        <input
+          id="searchInput"
+          type="text"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          inputmode="text"
+          data-i18n-placeholder="searchPlaceholder"
+          placeholder="ابحث عن عنوان أو مؤلف..."
+          aria-label="Search books">
+
+        <button
+          id="clearSearch"
+          class="clear-search"
+          type="button"
+          aria-label="Clear search"
+          hidden>
+          ×
+        </button>
+      </label>
     </div>
-    <div class="library-tools"><div id="categories" class="categories"></div><span id="resultCount" class="result-count"></span></div>
-    <section id="bookGrid" class="book-grid" aria-live="polite"></section>
-    <p id="emptyState" class="empty hidden" data-i18n="empty">لا توجد نتائج مطابقة. جرّب بحثاً آخر.</p>
+
+    <div class="library-tools">
+      <div id="categories" class="categories"></div>
+      <span id="resultCount" class="result-count"></span>
+    </div>
+
+    <section
+      id="bookGrid"
+      class="book-grid"
+      aria-live="polite">
+    </section>
+
+    <p
+      id="emptyState"
+      class="empty hidden"
+      data-i18n="empty">
+      لا توجد نتائج مطابقة. جرّب بحثاً آخر.
+    </p>
+
   </section>
 
   <section id="features" class="features">
-    <div><span class="feature-icon">⌕</span><h3 data-i18n="featureSearch">بحث سهل</h3><p data-i18n="featureSearchDesc">اعثر على العناوين حسب الاسم أو المؤلف.</p></div>
-    <div><span class="feature-icon">♡</span><h3 data-i18n="featureFav">قائمتك المفضلة</h3><p data-i18n="featureFavDesc">احفظ اختياراتك على هذا الجهاز.</p></div>
-    <div><span class="feature-icon">↗</span><h3 data-i18n="featureGrow">قابلة للتوسّع</h3><p data-i18n="featureGrowDesc">الخطوة التالية: ربط قاعدة بيانات وإضافة كتب مرخّصة.</p></div>
+
+    <div>
+      <span class="feature-icon">⌕</span>
+      <h3 data-i18n="featureSearch">بحث سهل</h3>
+      <p data-i18n="featureSearchDesc">
+        اعثر على العناوين حسب الاسم أو المؤلف.
+      </p>
+    </div>
+
+    <div>
+      <span class="feature-icon">♡</span>
+      <h3 data-i18n="featureFav">قائمتك المفضلة</h3>
+      <p data-i18n="featureFavDesc">
+        احفظ اختياراتك على هذا الجهاز.
+      </p>
+    </div>
+
+    <div>
+      <span class="feature-icon">↗</span>
+      <h3 data-i18n="featureGrow">قابلة للتوسّع</h3>
+      <p data-i18n="featureGrowDesc">
+        الخطوة التالية: ربط قاعدة بيانات وإضافة كتب مرخّصة.
+      </p>
+    </div>
+
   </section>
+
 </main>
 
-<footer><a class="footer-brand" href="#">KITABI</a><span data-i18n="footerText">اقرأ، اكتشف، تعلّم.</span><span>© <span id="year"></span> KITABI</span></footer>
+<footer>
+  <a class="footer-brand" href="#">KITABI</a>
+
+  <span data-i18n="footerText">
+    اقرأ، اكتشف، تعلّم.
+  </span>
+
+  <span>
+    © <span id="year"></span> KITABI
+  </span>
+</footer>
 
 <dialog id="bookDialog" class="book-dialog">
-  <button class="close-button" id="closeDialog" aria-label="Close">×</button>
+  <button
+    class="close-button"
+    id="closeDialog"
+    type="button"
+    aria-label="Close">
+    ×
+  </button>
+
   <div id="dialogContent"></div>
 </dialog>
-<script src="app.js"></script>
+
+<script src="./app.js" defer></script>
+
 </body>
 </html>
